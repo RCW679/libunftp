@@ -271,7 +271,7 @@ where
     /// let server = Server::with_fs("/tmp")
     ///              .ftps_manual(config);
     /// ```
-    pub fn ftps_manual<P: Into<PathBuf>>(mut self, config: Arc<ServerConfig>) -> Self {
+    pub fn ftps_manual(mut self, config: Arc<ServerConfig>) -> Self {
         self.ftps_mode = FtpsConfig::On { tls_config: config };
         self
     }
